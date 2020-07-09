@@ -14,6 +14,8 @@ Route::get('/list-movies', 'Maratonando\ListMovieController@index')->name('list_
 
 Route::get('/update-movie', 'Maratonando\UpdateMovieController@index')->name('update_movie');
 Route::get('/update-movie/{id}', 'Maratonando\UpdateMovieController@show')->name('update');
+Route::post('/update/{id}', 'Maratonando\UpdateMovieController@store');
 
 Route::get('/delete-movie', 'Maratonando\DeleteMovieController@index')->name('delete_movie');
+Route::get('/delete-movie/{id}', 'Maratonando\DeleteMovieController@delete')->name('delete');
 

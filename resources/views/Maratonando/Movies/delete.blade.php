@@ -31,7 +31,7 @@
                     @endforeach
                     </td>
                     <td class="d-flex">
-                        <a href="#" class="btn btn-outline-danger ml-1">Apagar</a>
+                        <a href="{{ URL('/delete-movie/'.$c['id'])}}" class="btn btn-outline-danger ml-1">Apagar</a>
                     </td>
                 </tr>
                 @empty
