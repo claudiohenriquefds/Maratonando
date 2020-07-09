@@ -8,25 +8,25 @@
         @csrf
             <div class="form-group">
                 <label for="title">Titulo do filme</label>
-                <input type="text" class="form-control" id="title" name="title">
+                <input type="text" class="form-control" id="title" name="title" required>
             </div>
             <div class="form-group">
                 <label for="description">Resumo do filme</label>
-                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
             </div>
             <div class="form-group">
-                <label for="actor" id="actorLabel">Ator/Atriz</label>
+                <label for="actor_0" id="actorLabel">Ator/Atriz</label>
                 <div class="d-flex">
-                    <input type="text" class="form-control" id="actor_0" name="actor_0">
+                    <input type="text" class="form-control" id="actor_0" name="actor_0" required>
                     <a href="#titulo" onclick="add_actor()" class="btn btn-dark ml-2">+</a>
                     <input type="hidden" name="actorQtd" id="actorQtd">
                 </div>
             </div>
             <div id="actorAdd"></div>
             <div class="form-group">
-                <label for="gender" id="genderLabel">Genero</label>
+                <label for="gender_0" id="genderLabel">Genero</label>
                 <div class="d-flex">
-                    <input type="text" class="form-control" id="gender_0" name="gender_0">
+                    <input type="text" class="form-control" id="gender_0" name="gender_0" required>
                     <a href="#titulo" onclick="add_gender()" class="btn btn-dark ml-2">+</a>
                     <input type="hidden"  name="genderQtd" id="genderQtd">
                 </div>

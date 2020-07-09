@@ -12,4 +12,5 @@ class Ator extends Model
     ];
 
     protected $table = 'ators';
+
 }
