@@ -35,7 +35,7 @@
                     </td>
                 </tr>
                 @empty
-                <p>Sem dados cadastrais</p>
+                <h3 class="text-center border border-dark rounded-pill w-100 text-bold">Sem dados cadastrais</h3>
                 @endforelse
             </tbody>
         </table>

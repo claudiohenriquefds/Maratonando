@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Model\Filmes;
 use App\Model\Ator;
 use App\Model\Genero;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class DeleteMovieController extends Controller
 {
@@ -28,8 +30,10 @@ class DeleteMovieController extends Controller
         $movie = Filmes::find($id_movie)->delete();
 
         if($actors && $genders && $movie){
-            return redirect()->route('home');
+            Alert::success('Sucesso', 'O filme foi deletado com sucesso.');
+            return redirect()->route('delete_home');
         }else{
+            Alert::error('Erro', 'Ocorreu um problema ao deletar o filme, tente novamente.');
             return redirect()->route('delete_movie');
         }
     }

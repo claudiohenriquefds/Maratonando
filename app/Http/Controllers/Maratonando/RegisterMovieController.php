@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Model\Filmes;
 use App\Model\Genero;
 use App\Model\Ator;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class RegisterMovieController extends Controller
 {
@@ -39,8 +41,10 @@ class RegisterMovieController extends Controller
         }
 
         if($movies && $actor && $gender){
+            Alert::success('Sucesso', 'O filme foi cadastrado com sucesso.');
             return redirect()->route('home');
         }else{
+            Alert::error('Erro', 'Ocorreu um problema ao cadastar, tente novamente.');
             return redirect()->route('register_movie');
         }
     }

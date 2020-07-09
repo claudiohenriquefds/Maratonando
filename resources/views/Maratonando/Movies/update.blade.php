@@ -33,10 +33,10 @@
                     <td class="d-flex">
                         <a href="{{ URL('/update-movie/'.$c['id'])}}" class="btn btn-outline-dark mr-1">Editar</a>
                     </td>
-                </tr>
                 @empty
-                <p>Sem dados cadastrais</p>
+                <h3 class="text-center border border-dark rounded-pill w-100 text-bold">Sem dados cadastrais</h3>
                 @endforelse
+                </tr>
             </tbody>
         </table>
         <a href="{{ route('home') }}" class="btn btn-link w-100 text-center text-dark"> Inicio</a>

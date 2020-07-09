@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Model\Filmes;
 use App\Model\Ator;
 use App\Model\Genero;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class UpdateMovieController extends Controller
 {
@@ -52,8 +54,10 @@ class UpdateMovieController extends Controller
         }
 
         if($movie && $a && $g){
+            Alert::success('Sucesso', 'O filme foi atualizado com sucesso.');
             return redirect()->route('list_movies');
         }else{
+            Alert::error('Erro', 'Ocorreu um problema ao alterar o filme, tente novamente.');
             return redirect()->route('update_movie');
         }
 
