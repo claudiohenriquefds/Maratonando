@@ -1,5 +1,5 @@
 let valueOfActor = document.getElementById('actorValue').value;
-let valueOfGender = 0;
+let valueOfGender = document.getElementById('genderValue').value;
 
 function add_actor(){
     valueOfActor++;

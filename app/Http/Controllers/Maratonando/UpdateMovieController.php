@@ -28,8 +28,17 @@ class UpdateMovieController extends Controller
         $movie = Filmes::find($id_movie);
         $actors = Ator::get()->where('fk_idmovie',$id_movie);
         $genders = Genero::get()->where('fk_idmovie',$id_movie);
+        $nameActors = [];
+        $genderMovies = [];
 
-        return view('Maratonando.Movies.edit', compact('movie','actors','genders'));
+        foreach($actors as $actor){
+            array_push($nameActors,$actor->actor);
+        }
+        foreach ($genders as $gender) {
+            array_push($genderMovies,$gender->gender);
+        }
+
+        return view('Maratonando.Movies.edit', compact('movie','nameActors','genderMovies'));
     }
     public function store(Request $request){
         $id_movie = $request->route('id');
@@ -38,16 +47,30 @@ class UpdateMovieController extends Controller
         $actors = Ator::get()->where('fk_idmovie',$id_movie);       
         $genders = Genero::get()->where('fk_idmovie',$id_movie);
 
-        for($cont = 0; $cont <= $data['actorQtd']; $cont++){
+        for($cont = 0; $cont < $data['actorQtd']; $cont++){
             if(sizeof($actors) > 1){
-                $a = Ator::where('id',$actors[$cont]->id)->update(['actor' => $data['actor_'.$cont]]);
+                if(isset($actors[$cont])){
+                    $a = Ator::where('id',$actors[$cont]->id)->update(['actor' => $data['actor_'.$cont]]);
+                }else{
+                    $a = Ator::create([
+                        'fk_idmovie' => $id_movie,
+                        'actor' => $data['actor_'.$cont],
+                    ]);
+                }
             }else{
                 $a = Ator::where('id',$actors[2]->id)->update(['actor' => $data['actor_'.$cont]]);
             }
         }
-        for($cont = 0; $cont <= $data['genderQtd']; $cont++){
+        for($cont = 0; $cont < $data['genderQtd']; $cont++){
             if(sizeof($genders) > 1){
-                $g = Genero::where('id',$genders[$cont]->id)->update(['gender' => $data['gender_'.$cont]]);    
+                if(isset($genders[$cont])){
+                    $g = Genero::where('id',$genders[$cont]->id)->update(['gender' => $data['gender_'.$cont]]);
+                }else{
+                    $g = Genero::create([
+                        'fk_idmovie' => $id_movie,
+                        'gender' => $data['gender_'.$cont],
+                    ]);
+                }
             }else{
                 $g = Genero::where('id',$genders[2]->id)->update(['gender' => $data['gender_'.$cont]]);
             }
