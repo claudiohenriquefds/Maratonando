@@ -30,14 +30,12 @@
                             echo '<div class="d-flex mt-1" id="child_actor">',
                                 '<input type="text" class="form-control" id="actor_'.$cont.'" name="actor_'.$cont.'" value="'.$actors[$cont]->actor.'" required>',
                                 '<a href="#titulo" onclick="remove_actor()" class="btn btn-dark ml-2">-</a>',
-                                '</div>',
-                                '<script>
-                                    let actorQtd = document.getElementById("actorQtd");
-                                    actorQtd.value ='. $cont.'
-                                </script>' ;
+                                '</div>';
+                            $value = $cont;
                         }
                     ?>
-                    <input type="hidden" name="actorQtd" id="actorQtd" value="{{ $cont - 1 }}">
+                    <input type="hidden" id="actorValue" value="{{ $cont }}">
+                    <input type="hidden" name="actorQtd" id="actorQtd" value="{{ $value }}">
                 </div>
             </div>
             <div class="form-group">

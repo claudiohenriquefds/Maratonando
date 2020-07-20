@@ -1,4 +1,4 @@
-let valueOfActor = 0;
+let valueOfActor = document.getElementById('actorValue').value;
 let valueOfGender = 0;
 
 function add_actor(){
@@ -24,7 +24,8 @@ function add_actor(){
     divFlex.appendChild(input);
     divFlex.appendChild(a);
     divContent.appendChild(divFlex);
-    actorQtd.value = valueOfActor;
+
+    actorQtd.value = parseInt(actorQtd.value) + 1;
 }
 function add_gender(){
     valueOfGender++;
@@ -49,7 +50,7 @@ function add_gender(){
     divFlex.appendChild(input);
     divFlex.appendChild(a);
     divContent.appendChild(divFlex);
-    genderQtd.value = valueOfGender;
+    genderQtd.value = parseInt(genderQtd)+1;
 }
 function remove_actor(){
     let divContent = document.getElementById('actorAdd');

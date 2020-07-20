@@ -8,7 +8,7 @@ use App\Model\Filmes;
 use App\Model\Genero;
 use App\Model\Ator;
 use RealRashid\SweetAlert\Facades\Alert;
-
+ 
 
 class RegisterMovieController extends Controller
 {

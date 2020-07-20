@@ -11,5 +11,5 @@ class Genero extends Model
         'gender',
     ];
 
-    protected $table = 'generos';
+    protected $table = 'generos'; 
 }
