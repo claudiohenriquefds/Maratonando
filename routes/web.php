@@ -19,3 +19,6 @@ Route::post('/update/{id}', 'Maratonando\UpdateMovieController@store');
 Route::get('/delete-movie', 'Maratonando\DeleteMovieController@index')->name('delete_movie');
 Route::get('/delete-movie/{id}', 'Maratonando\DeleteMovieController@delete')->name('delete');
 
+Route::get('/import', 'Maratonando\ImportController@index')->name('import_xml');
+Route::post('/import', 'Maratonando\ImportController@store')->name('import');
+

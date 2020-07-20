@@ -31,7 +31,7 @@ class DeleteMovieController extends Controller
 
         if($actors && $genders && $movie){
             Alert::success('Sucesso', 'O filme foi deletado com sucesso.');
-            return redirect()->route('delete_home');
+            return redirect()->route('home');
         }else{
             Alert::error('Erro', 'Ocorreu um problema ao deletar o filme, tente novamente.');
             return redirect()->route('delete_movie');

@@ -30,7 +30,11 @@
                             echo '<div class="d-flex mt-1" id="child_actor">',
                                 '<input type="text" class="form-control" id="actor_'.$cont.'" name="actor_'.$cont.'" value="'.$actors[$cont]->actor.'" required>',
                                 '<a href="#titulo" onclick="remove_actor()" class="btn btn-dark ml-2">-</a>',
-                                '</div>';
+                                '</div>',
+                                '<script>
+                                    let actorQtd = document.getElementById("actorQtd");
+                                    actorQtd.value ='. $cont.'
+                                </script>' ;
                         }
                     ?>
                     <input type="hidden" name="actorQtd" id="actorQtd" value="{{ $cont - 1 }}">
@@ -53,13 +57,18 @@
                         echo '<div class="d-flex mt-1 mb-1" id="child_gender">',
                             '<input type="text" class="form-control" id="gender_'.$cont.'" name="gender_'.$cont.'" value="'.$genders[$cont]->gender.'" required>',
                             '<a href="#titulo" onclick="remove_gender()" class="btn btn-dark ml-2">-</a>',
-                            '</div>';
+                            '</div>',
+                            '<script>
+                                let genderQtd = document.getElementById("genderQtd");
+                                genderQtd.value = '.$cont.';
+                            </script>' ;
+                            
                     }
                     ?>
             </div>
             <input type="hidden"  name="genderQtd" id="genderQtd" value="{{ $cont - 1 }}">
             <button type="submit" class="btn btn-dark w-100">Atualizar</button>
-            <button type="submit" class="btn btn-danger w-100 mt-1">Cancelar</button>
+            <a href="{{ route('home') }}" class="btn btn-danger w-100 mt-1">Cancelar</a>
             <a href="{{ route('home') }}" class="btn btn-link w-100 text-center text-dark"> Inicio</a>
         </form>
     </div>

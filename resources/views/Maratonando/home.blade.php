@@ -9,6 +9,7 @@
             <a class="btn btn-outline-dark rounded-pill w-100 m-1" href="{{ route('list_movies') }}">Listar filmes</a>
             <a class="btn btn-outline-dark rounded-pill w-100 m-1" href="{{ route('update_movie') }}">Editar filme</a>
             <a class="btn btn-outline-dark rounded-pill w-100 m-1" href="{{ route('delete_movie') }}">Apagar filme</a>
+            <a class="btn btn-outline-dark rounded-pill w-100 m-1" href="{{ route('import_xml') }}">Importar XML</a>
         </div>
     </div>
 </div>

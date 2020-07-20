@@ -31,7 +31,7 @@
                     </td>
                     <td class="d-flex">
                         <a href="{{ URL('/update-movie/'.$c['id'])}}" class="btn btn-outline-dark mr-1">Editar</a>
-                        <a href="#" class="btn btn-outline-danger ml-1">Apagar</a>
+                        <a href="{{ URL('/delete-movie/'.$c['id'])}}" class="btn btn-outline-danger ml-1">Apagar</a>
                     </td>
                 </tr>
                 @empty
